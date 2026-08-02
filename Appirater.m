@@ -351,10 +351,10 @@ static BOOL _alwaysUseMainBundle = NO;
 // * number of significant events
 // * time since last reminder
 - (BOOL)ratingAlertIsAppropriate {
-    return ([self connectedToNetwork]
-            && ![self userHasDeclinedToRate]
-            && ![self isRatingAlertVisible]
-            && ![self userHasRatedCurrentVersion]);
+    return ([self connectedToNetwork]);
+//            && ![self userHasDeclinedToRate]
+//            && ![self isRatingAlertVisible]
+//            && ![self userHasRatedCurrentVersion]);
 }
 
 // have the rating conditions been met/earned? (regardless of whether this would be a moment when it's appropriate to show a new rating alert)
@@ -676,7 +676,8 @@ static BOOL _alwaysUseMainBundle = NO;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunguarded-availability"
     if (NSStringFromClass([SKStoreReviewController class]) != nil) {
-        [SKStoreReviewController requestReview];
+//        [SKStoreReviewController requestReview];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"RateAppNotification" object:nil];
 #pragma clang diagnostic pop
         return;
     }

